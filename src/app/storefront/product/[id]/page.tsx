@@ -4,13 +4,13 @@ import { useCartStore } from '@/lib/stores/cart';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Separator } from '@/components/ui/separator';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { ArrowLeft, ShoppingCart, Heart, Star, Truck, Shield, RotateCcw } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
 import { Product, ProductVariant } from '@/lib/types';
+import { useParams } from 'next/navigation';
 
 // Mock product data - in a real app, this would come from an API
 const mockProduct: Product = {
@@ -129,7 +129,8 @@ const mockProduct: Product = {
     sourceChannel: 'manual'
 };
 
-export default function SingleProductPage({ params }: { params: { id: string } }) {
+export default function SingleProductPage() {
+    const { id } = useParams<{ id: string }>();
     const { addItem } = useCartStore();
     const [selectedVariant, setSelectedVariant] = useState<ProductVariant>(mockProduct.variants[0]);
     const [quantity, setQuantity] = useState(1);
