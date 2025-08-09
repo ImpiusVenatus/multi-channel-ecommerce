@@ -14,7 +14,7 @@ import {
   Settings
 } from "lucide-react"
 
-export default function HomePage() {
+export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       <SiteHeader />
