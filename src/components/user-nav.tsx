@@ -13,6 +13,7 @@ import {
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { User, Settings, LogOut, ShoppingBag, BarChart3 } from "lucide-react"
+import Link from "next/link"
 
 export function UserNav() {
     return (
@@ -36,22 +37,30 @@ export function UserNav() {
                 </DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 <DropdownMenuGroup>
-                    <DropdownMenuItem>
-                        <User className="mr-2 h-4 w-4" />
-                        <span>Profile</span>
+                    <DropdownMenuItem asChild>
+                        <Link href="/profile">
+                            <User className="mr-2 h-4 w-4" />
+                            <span>Profile</span>
+                        </Link>
                     </DropdownMenuItem>
-                    <DropdownMenuItem>
-                        <ShoppingBag className="mr-2 h-4 w-4" />
-                        <span>Orders</span>
+                    <DropdownMenuItem asChild>
+                        <Link href="/storefront/cart">
+                            <ShoppingBag className="mr-2 h-4 w-4" />
+                            <span>Orders</span>
+                        </Link>
                     </DropdownMenuItem>
-                    <DropdownMenuItem>
-                        <BarChart3 className="mr-2 h-4 w-4" />
-                        <span>Analytics</span>
+                    <DropdownMenuItem asChild>
+                        <Link href="/analytics">
+                            <BarChart3 className="mr-2 h-4 w-4" />
+                            <span>Analytics</span>
+                        </Link>
                     </DropdownMenuItem>
-                    <DropdownMenuItem>
-                        <Settings className="mr-2 h-4 w-4" />
-                        <span>Settings</span>
-                        <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
+                    <DropdownMenuItem asChild>
+                        <Link href="/settings">
+                            <Settings className="mr-2 h-4 w-4" />
+                            <span>Settings</span>
+                            <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
+                        </Link>
                     </DropdownMenuItem>
                 </DropdownMenuGroup>
                 <DropdownMenuSeparator />
@@ -64,3 +73,4 @@ export function UserNav() {
         </DropdownMenu>
     )
 }
+

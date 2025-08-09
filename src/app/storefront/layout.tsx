@@ -8,7 +8,6 @@ interface StorefrontLayoutProps {
 export default function StorefrontLayout({ children }: StorefrontLayoutProps) {
     return (
         <div className="min-h-screen bg-background">
-            <SiteHeader />
             <main className="container mx-auto px-4 py-8">
                 {children}
             </main>

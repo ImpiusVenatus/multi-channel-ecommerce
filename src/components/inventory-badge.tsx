@@ -52,3 +52,4 @@ export function InventoryBadge({ variant, className }: InventoryBadgeProps) {
         </Badge>
     )
 }
+

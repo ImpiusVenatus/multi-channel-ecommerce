@@ -9,7 +9,7 @@ import { useCartStore } from "@/lib/stores/cart"
 
 const navigation = [
     { name: "Home", href: "/", icon: Home },
-    { name: "Products", href: "/products", icon: Package },
+    { name: "Products", href: "/storefront/products", icon: Package },
     { name: "Analytics", href: "/analytics", icon: BarChart3 },
     { name: "Settings", href: "/settings", icon: Settings },
 ]
@@ -56,3 +56,4 @@ export function MainNav() {
         </nav>
     )
 }
+
